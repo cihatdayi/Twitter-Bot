@@ -2,6 +2,14 @@ import os
 from bot_class import TwitterBot
 
 # private user keys
+
+"""
+userkeys.txt format
+"email"
+"username"
+"password"
+
+"""
 with open("userkeys.txt", "r") as file:
     satirlar = file.readlines()
     if len(satirlar) >= 3:
