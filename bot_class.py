@@ -7,12 +7,11 @@ from selenium.webdriver.support import expected_conditions as EC
 import wget
 import time
 
-# chrome_options = Options()
-# chrome_options.add_argument("--headless")  # Tarayıcıyı arka planda çalıştır
-# chrome_options.add_argument("--disable-gpu")  # GPU kullanımını devre dışı bırak (gereksiz hataları önlemek için)
-# driver = webdriver.Chrome(options=chrome_options)
+chrome_options = Options()
+chrome_options.add_argument("--headless")  # Tarayıcıyı arka planda çalıştır
+chrome_options.add_argument("--disable-gpu")  # GPU kullanımını devre dışı bırak (gereksiz hataları önlemek için)
+driver = webdriver.Chrome(options=chrome_options)
 
-driver = webdriver.Chrome()
 """
 twitter botumuzun yapabilecekleri
 - Twitter hesabına giriş

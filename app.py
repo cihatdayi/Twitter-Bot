@@ -8,7 +8,7 @@ if __name__ == "__main__":
     try:
         pj = TwitterBot(email=email,username=username,password=password)
         pj.login()
-        pj.Post_tweets("")
+        pj.Post_tweets("Bunlar Salak Mı???\n-\nSamet")
         pj.logout()
     except Exception as e:
         pj.logout()
