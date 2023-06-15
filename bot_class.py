@@ -114,8 +114,7 @@ class TwitterBot:
         driver.find_element(By.XPATH,'//*[@id="react-root"]/div/div/div[2]/main/div/div/div/div/div/div[3]/div/div[2]/div[1]/div/div/div/div[2]/div[2]/div[2]/div/div/div[2]/div[3]/div').click()
         time.sleep(1)
 
-    def VideoDownloader(url):
-        pass
+    
         
 
 
