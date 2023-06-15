@@ -2,7 +2,7 @@ import os
 from bot_class import TwitterBot
 
 # private user keys
-with open("user.txt", "r") as file:
+with open("userkeys.txt", "r") as file:
     satirlar = file.readlines()
     if len(satirlar) >= 3:
         email = satirlar[0].strip()
@@ -14,7 +14,7 @@ if __name__ == "__main__":
     try:
         pj = TwitterBot(email,username,password)
         pj.login()
-        pj.Post_tweets("deneme2")
+        pj.Post_tweets("merhaba")
         pj.logout()
     except Exception as e:
         pj.logout()
