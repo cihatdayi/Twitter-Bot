@@ -7,10 +7,13 @@ from selenium.webdriver.support import expected_conditions as EC
 import wget
 import time
 
-chrome_options = Options()
-chrome_options.add_argument("--headless")  # Tarayıcıyı arka planda çalıştır
-chrome_options.add_argument("--disable-gpu")  # GPU kullanımını devre dışı bırak (gereksiz hataları önlemek için)
-driver = webdriver.Chrome(options=chrome_options)
+# chrome_options = Options()
+# chrome_options.add_argument("--headless")  # Tarayıcıyı arka planda çalıştır
+# chrome_options.add_argument("--disable-gpu")  # GPU kullanımını devre dışı bırak (gereksiz hataları önlemek için)
+# driver = webdriver.Chrome(options=chrome_options)
+
+driver = webdriver.Chrome()
+
 
 """
 twitter botumuzun yapabilecekleri
@@ -44,7 +47,6 @@ logout()
 like_tweets(cycles: int)
     loops over number of cycles provided, scrolls the page down and likes the available tweets on the page in each loop pass
 
-
 """
 
 
@@ -60,7 +62,7 @@ class TwitterBot:
     def login(self):
         bot= self.bot
         bot.get("https://twitter.com/i/flow/login")
-        time.sleep(1)
+        time.sleep(2)
         username = bot.find_element(By.XPATH,"//*[@id='layers']/div/div/div/div/div/div/div[2]/div[2]/div/div/div[2]/div[2]/div/div/div/div[5]/label/div/div[2]/div/input")
         username.send_keys(self.email)
 
@@ -104,12 +106,14 @@ class TwitterBot:
         bot.get("https://twitter.com/home")
         time.sleep(2)
         bot.find_element(By.XPATH,'//*[@id="react-root"]/div/div/div[2]/main/div/div/div/div/div/div[3]/div/div[2]/div[1]/div/div/div/div[2]/div[1]/div/div/div/div/div/div/div/div/div/div/label/div[1]/div/div/div').click()
+        time.sleep(1)
         tweet = bot.find_element(By.XPATH, '//*[@id="react-root"]/div/div/div[2]/main/div/div/div/div/div/div[3]/div/div[2]/div[1]/div/div/div/div[2]/div[1]/div/div/div/div/div/div[2]/div/div/div/div/label/div[1]/div/div/div/div/div/div[2]/div/div/div/div')
         tweet.send_keys(tweetext)
 
-        time.sleep(1)
-        driver.find_element(By.XPATH,'//*[@id="react-root"]/div/div/div["2]/main/div/div/div/div/div/div[3]/div/div[2]/div[1]/div/div/div/div[2]/div[2]/div[2]/div/div/div[2]/div[3]/div').click()
 
+        time.sleep(2)
+        driver.find_element(By.XPATH,'//*[@id="react-root"]/div/div/div[2]/main/div/div/div/div/div/div[3]/div/div[2]/div[1]/div/div/div/div[2]/div[2]/div[2]/div/div/div[2]/div[3]/div').click()
+        time.sleep(1)
 
     def VideoDownloader(url):
         pass
